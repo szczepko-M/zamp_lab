@@ -1,0 +1,6 @@
+/home/mszczepk/zamp/zamp_lab/build/CMakeFiles/cmds_interpreter.dir
+/home/mszczepk/zamp/zamp_lab/build/CMakeFiles/edit_cache.dir
+/home/mszczepk/zamp/zamp_lab/build/CMakeFiles/rebuild_cache.dir
+/home/mszczepk/zamp/zamp_lab/build/plugin/CMakeFiles/Interp4Move.dir
+/home/mszczepk/zamp/zamp_lab/build/plugin/CMakeFiles/edit_cache.dir
+/home/mszczepk/zamp/zamp_lab/build/plugin/CMakeFiles/rebuild_cache.dir

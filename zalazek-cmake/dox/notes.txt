@@ -1,0 +1,8 @@
+bool ReadParams(istream &IStream){
+    string Nazwa;
+    double Szyb, Dlug;
+
+    IStrm << Nazwa << Szyb << Dlug;
+
+    return !Istrm.fail();
+}
