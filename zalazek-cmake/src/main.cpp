@@ -1,47 +1,69 @@
 #include <iostream>
-#include <dlfcn.h>
-#include <cassert>
+#include <fstream>
+#include <memory>
+#include <string>
 #include "AbstractInterp4Command.hh"
+#include "Set4LibInterfaces.hh"
 
 using namespace std;
 
-#define PLUGIN_NAME__move "libInterp4Move.so"
+static const char *PluginNames[] = {
+  "libInterp4Move.so",
+  "libInterp4Rotate.so",
+  "libInterp4Set.so",
+  "libInterp4Pause.so"
+};
 
+static const char *DefaultCmdFile = "opis_dzialan.cmd";
 
-int main()
+bool ReadAndPrintSyntaxes(const string &FileName, const Set4LibInterfaces &Plugins)
 {
-  void *pLibHnd_Move = dlopen(PLUGIN_NAME__move,RTLD_LAZY);
-  AbstractInterp4Command *(*pCreateCmdInterp_Move)(void);
-  void *pFun;
-
-  if (pLibHnd_Move) {
-    cout << endl
-	 << ":)  Wtyczka \"" << PLUGIN_NAME__move << "\" zostala poprawnie zaladowana."
-	 << endl;
-  } else {
-     cerr << "!!! Brak wtyczki: " PLUGIN_NAME__move << endl;
-     return 1;
+  ifstream CmdFile(FileName);
+  if (!CmdFile.is_open()) {
+    cerr << "!!! Nie mozna otworzyc pliku: " << FileName << endl;
+    return false;
   }
 
+  string CmdName;
+  while (CmdFile >> CmdName) {
+    shared_ptr<LibInterface> pLib = Plugins.FindPlugin(CmdName);
+    if (!pLib) {
+      cerr << "!!! Brak wtyczki obslugujacej polecenie: " << CmdName << endl;
+      return false;
+    }
 
-  pFun = dlsym(pLibHnd_Move,"CreateCmdInterp");
-  if (pFun) {
-    cout  << ":)  Funkcja \"CreateCmdInterp\" zostala znaleziona we wtyczce "
-	  << "\"" << PLUGIN_NAME__move << "\"." << endl;
-  } else {
-     cerr << "!!! Nie znaleziono funkcji CreateCmdInterp" << endl;
-     return 1;
+    unique_ptr<AbstractInterp4Command> pInterp(pLib->CreateInterp());
+    if (!pInterp) {
+      cerr << "!!! Nie udalo sie utworzyc interpretera polecenia: "
+           << CmdName << endl;
+      return false;
+    }
+
+    pInterp->PrintSyntax();
   }
-  pCreateCmdInterp_Move = reinterpret_cast<AbstractInterp4Command* (*)(void)>(pFun);
 
+  // Petla konczy sie przy braku kolejnego slowa: to koniec pliku (sukces)
+  // albo blad odczytu.
+  if (!CmdFile.eof()) {
+    cerr << "!!! Blad odczytu pliku: " << FileName << endl;
+    return false;
+  }
+  return true;
+}
 
-  AbstractInterp4Command *pInterp = pCreateCmdInterp_Move();
+int main(int argc, char **argv)
+{
+  const string CmdFileName = (argc > 1) ? argv[1] : DefaultCmdFile;
 
+  Set4LibInterfaces Plugins;
+
+  for (const char *pName : PluginNames) {
+    if (!Plugins.AddPlugin(pName)) return 1;
+    cout << ":)  Wtyczka \"" << pName << "\" zostala poprawnie zaladowana." << endl;
+  }
   cout << endl;
-  pInterp->PrintSyntax();
-  cout << endl;
-  
-  delete pInterp;
 
-  dlclose(pLibHnd_Move);
+  if (!ReadAndPrintSyntaxes(CmdFileName, Plugins)) return 1;
+
+  return 0;
 }

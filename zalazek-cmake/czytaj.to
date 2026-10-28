@@ -1,23 +1,20 @@
-Kompilacja z wykorzystaniem cmake jest realizowana w podstawowym wariancie,
-tzn.:
-   1.  mkdir ../build
-   2.  cd ../build
-   3.  cmake ../zalazek-cmake
+Interpreter opisu dzialan obiektow - Etap 1
+===========================================
+
+Kompilacja (cmake):
+   1.  mkdir build
+   2.  cd build
+   3.  cmake ../interpreter-etap1
    4.  cmake --build .
-   Uruchomienie programu:
-       ./cmds_interpreter
 
-Biblioteka wspoldzielona libInterp4Move.so jest tworzona jest
-w podkatalogu plugin
+Uruchomienie (z katalogu build):
+   ./cmds_interpreter                                  # czyta opis_dzialan.cmd
+   ./cmds_interpreter examples/nieznane_polecenie.cmd  # przyklad bledu
 
-Chcac utowrzyc dokumentacje z wykorzystaniem systemu doxygen,
-nalezy przejsc do katalogu zalezek-cmake/doc.
-Nastepnie nalezy wykonac polecenie:
+Program laduje cztery wtyczki (Move, Rotate, Set, Pause), nastepnie czyta z
+pliku kolejne slowa (nazwy polecen), dla kazdego znajduje wtyczke, tworzy
+interpreter, wyswietla skladnie polecenia (PrintSyntax) i usuwa interpreter.
+Parametry polecen nie sa w tym etapie obslugiwane.
 
-                        make doc
-
-Uwaga: Po wygenerowaniu dokumentacji uruchamiany jest program less,
-       ktory pozwala przejrzec liste bledow i ostrzezen, ktore
-       zglasza program doxygen. Aby zakonczyc jego dzialanie i wyjsc
-       z trybu przegladania, nalezy nacisnac klawisz 'Q'.
-
+Wtyczki powstaja w build/plugin; program szuka ich tam niezaleznie od
+biezacego katalogu (RUNPATH = $ORIGIN/plugin).
