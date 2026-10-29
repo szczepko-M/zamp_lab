@@ -2,5 +2,8 @@
 /home/mszczepk/zamp/zamp_lab/build/CMakeFiles/edit_cache.dir
 /home/mszczepk/zamp/zamp_lab/build/CMakeFiles/rebuild_cache.dir
 /home/mszczepk/zamp/zamp_lab/build/plugin/CMakeFiles/Interp4Move.dir
+/home/mszczepk/zamp/zamp_lab/build/plugin/CMakeFiles/Interp4Rotate.dir
+/home/mszczepk/zamp/zamp_lab/build/plugin/CMakeFiles/Interp4Set.dir
+/home/mszczepk/zamp/zamp_lab/build/plugin/CMakeFiles/Interp4Pause.dir
 /home/mszczepk/zamp/zamp_lab/build/plugin/CMakeFiles/edit_cache.dir
 /home/mszczepk/zamp/zamp_lab/build/plugin/CMakeFiles/rebuild_cache.dir

@@ -142,6 +142,93 @@ Interp4Move/fast:
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Move.dir/build.make plugin/CMakeFiles/Interp4Move.dir/build
 .PHONY : Interp4Move/fast
 
+#=============================================================================
+# Target rules for targets named Interp4Rotate
+
+# Build rule for target.
+Interp4Rotate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Interp4Rotate
+.PHONY : Interp4Rotate
+
+# fast build rule for target.
+Interp4Rotate/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Rotate.dir/build.make plugin/CMakeFiles/Interp4Rotate.dir/build
+.PHONY : Interp4Rotate/fast
+
+#=============================================================================
+# Target rules for targets named Interp4Set
+
+# Build rule for target.
+Interp4Set: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Interp4Set
+.PHONY : Interp4Set
+
+# fast build rule for target.
+Interp4Set/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Set.dir/build.make plugin/CMakeFiles/Interp4Set.dir/build
+.PHONY : Interp4Set/fast
+
+#=============================================================================
+# Target rules for targets named Interp4Pause
+
+# Build rule for target.
+Interp4Pause: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Interp4Pause
+.PHONY : Interp4Pause
+
+# fast build rule for target.
+Interp4Pause/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/build
+.PHONY : Interp4Pause/fast
+
+src/LibInterface.o: src/LibInterface.cpp.o
+.PHONY : src/LibInterface.o
+
+# target to build an object file
+src/LibInterface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o
+.PHONY : src/LibInterface.cpp.o
+
+src/LibInterface.i: src/LibInterface.cpp.i
+.PHONY : src/LibInterface.i
+
+# target to preprocess a source file
+src/LibInterface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.i
+.PHONY : src/LibInterface.cpp.i
+
+src/LibInterface.s: src/LibInterface.cpp.s
+.PHONY : src/LibInterface.s
+
+# target to generate assembly for a file
+src/LibInterface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.s
+.PHONY : src/LibInterface.cpp.s
+
+src/Set4LibInterfaces.o: src/Set4LibInterfaces.cpp.o
+.PHONY : src/Set4LibInterfaces.o
+
+# target to build an object file
+src/Set4LibInterfaces.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o
+.PHONY : src/Set4LibInterfaces.cpp.o
+
+src/Set4LibInterfaces.i: src/Set4LibInterfaces.cpp.i
+.PHONY : src/Set4LibInterfaces.i
+
+# target to preprocess a source file
+src/Set4LibInterfaces.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.i
+.PHONY : src/Set4LibInterfaces.cpp.i
+
+src/Set4LibInterfaces.s: src/Set4LibInterfaces.cpp.s
+.PHONY : src/Set4LibInterfaces.s
+
+# target to generate assembly for a file
+src/Set4LibInterfaces.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.s
+.PHONY : src/Set4LibInterfaces.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -175,7 +262,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Interp4Move"
+	@echo "... Interp4Pause"
+	@echo "... Interp4Rotate"
+	@echo "... Interp4Set"
 	@echo "... cmds_interpreter"
+	@echo "... src/LibInterface.o"
+	@echo "... src/LibInterface.i"
+	@echo "... src/LibInterface.s"
+	@echo "... src/Set4LibInterfaces.o"
+	@echo "... src/Set4LibInterfaces.i"
+	@echo "... src/Set4LibInterfaces.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

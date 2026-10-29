@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc
 
-CXX_FLAGS =  -Wl,-rpath=./plugin
+CXX_FLAGS = -std=c++14 -Wall -Wextra -pedantic
 

@@ -6,3 +6,30 @@ bool ReadParams(istream &IStream){
 
     return !Istrm.fail();
 }
+
+===== 29/10/26 =====
+
+ReadParams(inout rStrm CmdList: std::istream&): bool
+    istream, ale przekazujemy ifstream
+
+Z pliku:
+    komendę czyta program
+    całą resztę obsługuje wtyczka(?) - obiekt, parametry
+
+obiekty geo:
+    - Nazwa
+    - pozycja
+
+obiekty będą zbierane w kolekcji -> pdobnie do kolekcji wtyczek, ten sam sposób obsługi
+
+program interpreter -> metoda, do której przekazujemy nazwę pliku, ma dostęp do "sceny" oraz "interfejsu do pluginów"
+    > execCommand(in FileName Prog: const char*): bool - wykonanie polecenia (czy to na obiekcie, czy tworzenie)
+
+    bool Abstract4InterfaceCommand::ExecCmd(Scena &scn, const string & Name) -> metoda
+
+jeśli w fun jest dodane "in" to parametr nie jest modyfikowany
+
+można już myśleć nad execowaniem komendy typu move i pause - move > zmiana parametrów, pause > "zwyczajnym sleep'em"
+
+vector 3d musi mieć przeciążenie operatorów -> będzie (nawet jest) udostępniony szablon
+    chyba (defaultowo) iloczyn jest iloczynem skalarnym

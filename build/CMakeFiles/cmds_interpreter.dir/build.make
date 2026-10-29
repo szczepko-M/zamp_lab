@@ -83,17 +83,49 @@ CMakeFiles/cmds_interpreter.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/main.cpp -o CMakeFiles/cmds_interpreter.dir/src/main.cpp.s
 
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o: /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/LibInterface.cpp
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o -c /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/LibInterface.cpp
+
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/LibInterface.cpp > CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.i
+
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/LibInterface.cpp -o CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.s
+
+CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o: /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/Set4LibInterfaces.cpp
+CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o -c /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/Set4LibInterfaces.cpp
+
+CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/Set4LibInterfaces.cpp > CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.i
+
+CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/Set4LibInterfaces.cpp -o CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.s
+
 # Object files for target cmds_interpreter
 cmds_interpreter_OBJECTS = \
-"CMakeFiles/cmds_interpreter.dir/src/main.cpp.o"
+"CMakeFiles/cmds_interpreter.dir/src/main.cpp.o" \
+"CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o" \
+"CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o"
 
 # External object files for target cmds_interpreter
 cmds_interpreter_EXTERNAL_OBJECTS =
 
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/main.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/build.make
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cmds_interpreter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable cmds_interpreter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cmds_interpreter.dir/link.txt --verbose=$(VERBOSE)
 	/opt/st/stm32cubeclt_1.18.0/CMake/bin/cmake -E echo 
 	/opt/st/stm32cubeclt_1.18.0/CMake/bin/cmake -E echo \ Utworzony\ zostal\ program:\ \ cmds_interpreter

@@ -6,5 +6,5 @@ CXX_DEFINES = -DInterp4Move_EXPORTS
 
 CXX_INCLUDES = -I/home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/inc -I/home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/../inc
 
-CXX_FLAGS = -fPIC
+CXX_FLAGS = -std=c++14 -fPIC -Wall -Wextra -pedantic
 

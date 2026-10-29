@@ -14,7 +14,8 @@ include_directories(${PROJECT_SOURCE_DIR}/inc)
 add_executable(${PROJ_NAME}
   src/main.cpp
   src/LibInterface.cpp
-  src/Set4LibInterfaces.cpp)
+  src/Set4LibInterfaces.cpp
+  src/GeomObj.cpp)
 
 target_link_libraries(${PROJ_NAME} ${CMAKE_DL_LIBS})
 

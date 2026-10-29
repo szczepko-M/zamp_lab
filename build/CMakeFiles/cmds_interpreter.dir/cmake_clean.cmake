@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o"
+  "CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o.d"
+  "CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o"
+  "CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o.d"
   "CMakeFiles/cmds_interpreter.dir/src/main.cpp.o"
   "CMakeFiles/cmds_interpreter.dir/src/main.cpp.o.d"
   "cmds_interpreter"

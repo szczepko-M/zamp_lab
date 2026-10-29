@@ -5,6 +5,7 @@ class AbstractInterp4Command {
  public:
   virtual ~AbstractInterp4Command() {}
   virtual void PrintSyntax() const = 0;
+  // virtual bool ReadParams()
 };
 
 #endif
