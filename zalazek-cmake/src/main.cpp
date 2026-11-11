@@ -2,20 +2,24 @@
 #include <fstream>
 #include <memory>
 #include <string>
-#include "AbstractInterp4Command.hh"
-#include "Set4LibInterfaces.hh"
+//#include "AbstractInterp4Command.hh"
+//#include "Set4LibInterfaces.hh"
+#include "ProgramInterpreter.hh"
 
 using namespace std;
 
+/*
 static const char *PluginNames[] = {
   "libInterp4Move.so",
   "libInterp4Rotate.so",
   "libInterp4Set.so",
   "libInterp4Pause.so"
 };
+*/
 
 static const char *DefaultCmdFile = "opis_dzialan.cmd";
 
+/*
 bool ReadAndPrintSyntaxes(const string &FileName, const Set4LibInterfaces &Plugins)
 {
   ifstream CmdFile(FileName);
@@ -50,7 +54,9 @@ bool ReadAndPrintSyntaxes(const string &FileName, const Set4LibInterfaces &Plugi
   }
   return true;
 }
+*/
 
+/*
 int main(int argc, char **argv)
 {
   const string CmdFileName = (argc > 1) ? argv[1] : DefaultCmdFile;
@@ -66,4 +72,13 @@ int main(int argc, char **argv)
   if (!ReadAndPrintSyntaxes(CmdFileName, Plugins)) return 1;
 
   return 0;
+}
+*/
+
+int main(int argc, char **argv){
+  const char* CmdFileName = (argc > 1) ? argv[1] : DefaultCmdFile;
+
+  ProgramInterpreter prog_inter;
+
+  prog_inter.ExecProgram(CmdFileName);
 }

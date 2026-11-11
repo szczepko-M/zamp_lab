@@ -1,21 +1,21 @@
 #include "GeomObj.hh"
+#include "g3dVector.hh"
 
 using namespace std;
 
-GeomObj::GeomObj(const string &Name, Vector3D Pos_m){
+GeomObj::GeomObj(const string &Name, g3d::Vector Pos_m){
     _Name = Name;
     _Pos_m = Pos_m;
 }
 
-std::string GeomObj::GetName(){
+std::string GeomObj::GetName() const {
     return _Name;
 }
 
-void GeomObj::SetName(const std:string &Name){
+void GeomObj::SetName(const std::string &Name) {
     _Name = Name;
 }
 
-Vector3D GeomObj::GetPos_m(){
+g3d::Vector GeomObj::GetPos_m() const {
     return _Pos_m;
 }
-
