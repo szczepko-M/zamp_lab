@@ -16,7 +16,7 @@ class GeomObj {
         std::string GetName() const;
         void SetName(const std::string &Name);
         g3d::Vector GetPos_m() const;
-        g3d::Vector UsePos_m();
+        g3d::Vector UsePos_m(g3d::Vector Pos_m);
 
     
 };

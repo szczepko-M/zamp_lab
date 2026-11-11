@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/src/Interp4Rotate.cpp" "plugin/CMakeFiles/Interp4Rotate.dir/src/Interp4Rotate.cpp.o" "gcc" "plugin/CMakeFiles/Interp4Rotate.dir/src/Interp4Rotate.cpp.o.d"
+  "" "plugin/libInterp4Rotate.so" "gcc" "plugin/CMakeFiles/Interp4Rotate.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

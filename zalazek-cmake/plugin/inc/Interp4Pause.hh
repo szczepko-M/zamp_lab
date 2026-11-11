@@ -9,9 +9,18 @@
 #include "AbstractInterp4Command.hh"
 
 class Interp4Pause: public AbstractInterp4Command {
- public:
-  Interp4Pause();
-  virtual void PrintSyntax() const override;
+
+  int _Time = 0;
+
+  public:
+    Interp4Pause();
+
+    void PrintSyntax() const override;
+    void PrintCmd() const override;
+    bool ReadParams(std::istream& rStrm_CmdList) override;
+    bool ExecCmd(Set4GeomObjects& Scn) override;
+
+    static AbstractInterp4Command* CreateCmd();
 };
 
 #endif

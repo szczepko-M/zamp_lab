@@ -9,20 +9,43 @@ extern "C" {
   const char* GetCmdName(void);
 }
 
-const char* GetCmdName(void)
-{
+const char* GetCmdName(void){
   return "Rotate";
 }
 
-AbstractInterp4Command* CreateCmdInterp(void)
-{
-  return new Interp4Rotate();
+AbstractInterp4Command* Interp4Rotate::CreateCmd(void){
+  return new Interp4Rotate;
+}
+
+AbstractInterp4Command* CreateCmd(void){
+  return Interp4Rotate::CreateCmd();
 }
 
 Interp4Rotate::Interp4Rotate()
 {}
 
-void Interp4Rotate::PrintSyntax() const
-{
+void Interp4Rotate::PrintSyntax() const{
   cout << "   Rotate  NazwaObiektu  NazwaOsi(OX|OY|OZ)  Szybkosc[st/s]  KatObrotu[st]" << endl;
+}
+
+void Interp4Rotate::PrintCmd() const {
+  cout << "Rotate " << _ObjName << " " << _Axis << " " << _AngularSpeed
+  << " " << _Rotation << endl;
+}
+
+bool Interp4Rotate::ReadParams(std::istream& rStrm_CmdList){
+  rStrm_CmdList >> _ObjName >> _Axis >> _AngularSpeed >> _Rotation;
+
+  if(rStrm_CmdList.fail()){
+    std::cerr << "!!! Błąd w ładowaniu parametrów" << endl;
+    return false;
+  }
+
+  return true;
+}
+
+bool Interp4Rotate::ExecCmd(Set4GeomObjects& Scn){
+  // wykonanie rotacji
+
+  return true;
 }

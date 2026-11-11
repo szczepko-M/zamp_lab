@@ -9,20 +9,38 @@ extern "C" {
   const char* GetCmdName(void);
 }
 
-const char* GetCmdName(void)
-{
+const char* GetCmdName(void){
   return "Pause";
 }
 
-AbstractInterp4Command* CreateCmdInterp(void)
-{
-  return new Interp4Pause();
+AbstractInterp4Command* Interp4Pause::CreateCmd(void){
+  return new Interp4Pause;
 }
 
-Interp4Pause::Interp4Pause()
-{}
+Interp4Pause::Interp4Pause(){}
 
 void Interp4Pause::PrintSyntax() const
 {
   cout << "   Pause  CzasPostoju[ms]" << endl;
+}
+
+void Interp4Pause::PrintCmd() const {
+  cout << "Pause: " << _Time << endl;
+}
+
+bool Interp4Pause::ReadParams(std::istream& rStrm_CmdList){
+  rStrm_CmdList >> _Time;
+
+  if(rStrm_CmdList.fail()){
+    std::cerr << "!!! Błąd w ładowaniu parametrów" << endl;
+    return false;
+  }
+
+  return true;
+}
+
+bool Interp4Pause::ExecCmd(Set4GeomObjects& Scn){
+  // wykonanie przerwy w działaniu
+
+  return true;
 }

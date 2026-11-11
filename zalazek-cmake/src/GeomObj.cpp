@@ -19,3 +19,7 @@ void GeomObj::SetName(const std::string &Name) {
 g3d::Vector GeomObj::GetPos_m() const {
     return _Pos_m;
 }
+
+g3d::Vector GeomObj::UsePos_m(g3d::Vector Pos_m) {
+    _Pos_m = Pos_m;
+}

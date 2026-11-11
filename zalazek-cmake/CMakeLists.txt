@@ -15,7 +15,7 @@ add_executable(${PROJ_NAME}
   src/main.cpp
   src/LibInterface.cpp
   src/Set4LibInterfaces.cpp
-  src/SetGeomObjects.cpp
+  src/Set4GeomObjects.cpp
   src/ProgramInterpreter.cpp
   src/GeomObj.cpp)
 

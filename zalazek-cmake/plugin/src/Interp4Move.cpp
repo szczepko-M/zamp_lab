@@ -18,7 +18,7 @@ const char* GetCmdName(void) {
 }
 
 AbstractInterp4Command* Interp4Move::CreateCmd(void) {
-  return Interp4Move::CreateCmd();
+  return new Interp4Move;
 }
 
 AbstractInterp4Command* CreateCmd(void){
@@ -50,11 +50,11 @@ bool Interp4Move::ExecCmd(Set4GeomObjects& Scn){
   std::shared_ptr<GeomObj> pObj = Scn.FindGeomObj(_ObjName);
 
   if(!pObj){
-    std::cerr << "!!! Move: Nie zanleziono obiektu " << _ObjName << " w scenie" << endl;
+    std::cerr << "!!! Move: Nie znaleziono obiektu " << _ObjName << " w scenie" << endl;
     return false;
   }
 
-  pObj->UsePos_m()[0] += _Distance;
+  // pObj->UsePos_m()[0] += _Distance;
 
   cout << "Move: " << _ObjName << ", nowa pozycja: "
     << pObj->GetPos_m()[0] << ", "

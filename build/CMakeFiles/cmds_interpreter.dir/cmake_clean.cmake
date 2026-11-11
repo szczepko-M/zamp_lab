@@ -1,6 +1,13 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cmds_interpreter.dir/link.d"
+  "CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o"
+  "CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o.d"
   "CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o"
   "CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o.d"
+  "CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o"
+  "CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o.d"
+  "CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o"
+  "CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o.d"
   "CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o"
   "CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o.d"
   "CMakeFiles/cmds_interpreter.dir/src/main.cpp.o"
