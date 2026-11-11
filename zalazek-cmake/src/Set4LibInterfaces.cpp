@@ -30,6 +30,10 @@ bool Set4LibInterfaces::AddPlugin(const string &LibName)
 shared_ptr<LibInterface> Set4LibInterfaces::FindPlugin(const string &CmdName) const
 {
   const_iterator it = find(CmdName);
-  if (it == end()) return shared_ptr<LibInterface>();
+  
+  if (it == end()){
+    return shared_ptr<LibInterface>();
+  }
+  
   return it->second;
 }

@@ -1,6 +1,8 @@
 #ifndef ABSTRACTINTERP4COMMAND_HH
 #define ABSTRACTINTERP4COMMAND_HH
 
+#include <iosfwd>
+
 class Set4GeomObjects;
 
 class AbstractInterp4Command {

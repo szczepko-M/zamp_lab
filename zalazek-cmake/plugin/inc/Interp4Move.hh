@@ -12,8 +12,8 @@
 
 class Interp4Move: public AbstractInterp4Command {
   std::string _ObjName;
-  int _Speed = 0;
-  int _Distance = 0;
+  double _Speed = 0;
+  double _Distance = 0;
 
   public:
     Interp4Move();

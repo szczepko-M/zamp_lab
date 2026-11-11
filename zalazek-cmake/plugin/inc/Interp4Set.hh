@@ -7,15 +7,16 @@
 #endif
 
 #include "AbstractInterp4Command.hh"
+#include <string>
 
 class Interp4Set: public AbstractInterp4Command {
   std::string _ObjName;
-  int _DistX = 0;
-  int _DistY = 0;
-  int _DistZ = 0;
-  int _AngleX = 0;
-  int _AngleY = 0;
-  int _AngleZ = 0;
+  double _DistX = 0;
+  double _DistY = 0;
+  double _DistZ = 0;
+  double _AngleX = 0;
+  double _AngleY = 0;
+  double _AngleZ = 0;
 
  public:
   Interp4Set();

@@ -25,7 +25,8 @@ target_link_libraries(${PROJ_NAME} ${CMAKE_DL_LIBS})
 # (niezaleznie od biezacego katalogu roboczego).
 set_target_properties(${PROJ_NAME} PROPERTIES
   BUILD_RPATH "\$ORIGIN/plugin"
-  BUILD_WITH_INSTALL_RPATH OFF)
+  BUILD_WITH_INSTALL_RPATH OFF
+  ENABLE_EXPORTS ON)
 
 add_dependencies(${PROJ_NAME} Interp4Move Interp4Rotate Interp4Set Interp4Pause)
 

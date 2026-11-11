@@ -80,5 +80,5 @@ int main(int argc, char **argv){
 
   ProgramInterpreter prog_inter;
 
-  prog_inter.ExecProgram(CmdFileName);
+  return prog_inter.ExecProgram(CmdFileName) ? 0 : 1;
 }

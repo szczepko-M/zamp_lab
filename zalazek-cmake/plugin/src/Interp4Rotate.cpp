@@ -29,17 +29,27 @@ void Interp4Rotate::PrintSyntax() const{
 }
 
 void Interp4Rotate::PrintCmd() const {
-  cout << "Rotate " << _ObjName << " " << _Axis << " " << _AngularSpeed
+  cout << "> Rotate " << _ObjName << " " << _Axis << " " << _AngularSpeed
   << " " << _Rotation << endl;
 }
-
 bool Interp4Rotate::ReadParams(std::istream& rStrm_CmdList){
-  rStrm_CmdList >> _ObjName >> _Axis >> _AngularSpeed >> _Rotation;
+  std::string ObjName, Axis;
+  double AngularSpeed, Rotation;
 
-  if(rStrm_CmdList.fail()){
+  if(!(rStrm_CmdList >> ObjName >> Axis >> AngularSpeed >> Rotation)){
     std::cerr << "!!! Rotate: Błąd w ładowaniu parametrów" << endl;
     return false;
   }
+
+  if(Axis != "OX" && Axis != "OY" && Axis != "OZ"){
+    std::cerr << "!!! Rotate: nieznana os \"" << Axis << "\" (dozwolone: OX, OY, OZ)" << endl;
+    return false;
+  }
+
+  _ObjName = ObjName;
+  _Axis = Axis;
+  _AngularSpeed = AngularSpeed;
+  _Rotation = Rotation;
 
   return true;
 }

@@ -29,16 +29,25 @@ void Interp4Pause::PrintSyntax() const
 }
 
 void Interp4Pause::PrintCmd() const {
-  cout << "Pause: " << _Time << endl;
+  cout << "> Pause: " << _Time << endl;
 }
 
 bool Interp4Pause::ReadParams(std::istream& rStrm_CmdList){
-  rStrm_CmdList >> _Time;
+  //rStrm_CmdList >> _Time;
 
-  if(rStrm_CmdList.fail()){
+  int Time;
+
+  if(!(rStrm_CmdList >> Time)){
     std::cerr << "!!! Pause: Błąd w ładowaniu parametrów" << endl;
     return false;
   }
+
+  if(Time < 0){
+    std::cerr << "!!! Pause: Czas nie może być uejmny" << endl;
+    return false;
+  }
+
+  _Time = Time;
 
   return true;
 }

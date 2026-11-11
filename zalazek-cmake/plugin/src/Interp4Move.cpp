@@ -32,16 +32,18 @@ void Interp4Move::PrintSyntax() const {
 }
 
 void Interp4Move::PrintCmd() const {
-  cout << "Move " << _ObjName << " " << _Speed << " " << _Distance << endl;
+  cout << "> Move " << _ObjName << " " << _Speed << " " << _Distance << endl;
 }
 
 bool Interp4Move::ReadParams(std::istream& rStrm_CmdList){
-  rStrm_CmdList >> _ObjName >> _Speed >> _Distance;
+  std::string ObjName;
+  double Speed, Distance;
 
-  if(rStrm_CmdList.fail()){
-    std::cerr << "!!! Move: Błąd w ładowaniu parametrów" << endl;
-    return false;
-  }
+  if(!(rStrm_CmdList >> ObjName >> Speed >> Distance)) return false;
+
+  _ObjName = ObjName;
+  _Speed = Speed;
+  _Distance = Distance;
 
   return true;
 }
@@ -54,9 +56,9 @@ bool Interp4Move::ExecCmd(Set4GeomObjects& Scn){
     return false;
   }
 
-  // pObj->UsePos_m()[0] += _Distance;
+  pObj->UsePos_m()[0] += _Distance;
 
-  cout << "Move: " << _ObjName << ", nowa pozycja: "
+  cout << "# Move: " << _ObjName << ", nowa pozycja: "
     << pObj->GetPos_m()[0] << ", "
     << pObj->GetPos_m()[1] << ", "
     << pObj->GetPos_m()[2] << " " << endl;

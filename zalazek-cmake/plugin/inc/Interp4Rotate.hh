@@ -7,12 +7,13 @@
 #endif
 
 #include "AbstractInterp4Command.hh"
+#include <string>
 
 class Interp4Rotate: public AbstractInterp4Command {
   std::string _ObjName;
   std::string _Axis; // może jakiś enum coś ten ?
-  int _AngularSpeed = 0;
-  int _Rotation = 0;
+  double _AngularSpeed = 0;
+  double _Rotation = 0;
 
   public:
     Interp4Rotate();
