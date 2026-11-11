@@ -4,7 +4,7 @@
 plugin/CMakeFiles/Interp4Move.dir/src/Interp4Move.cpp.o
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/src/Interp4Move.cpp
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/AbstractInterp4Command.hh
- /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObj.hh
+ /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObject.hh
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/Set4GeomObjects.hh
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/g3dVector.hh
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/geomVector.hh

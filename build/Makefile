@@ -181,29 +181,29 @@ Interp4Pause/fast:
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/build
 .PHONY : Interp4Pause/fast
 
-src/GeomObj.o: src/GeomObj.cpp.o
-.PHONY : src/GeomObj.o
+src/GeomObject.o: src/GeomObject.cpp.o
+.PHONY : src/GeomObject.o
 
 # target to build an object file
-src/GeomObj.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o
-.PHONY : src/GeomObj.cpp.o
+src/GeomObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o
+.PHONY : src/GeomObject.cpp.o
 
-src/GeomObj.i: src/GeomObj.cpp.i
-.PHONY : src/GeomObj.i
+src/GeomObject.i: src/GeomObject.cpp.i
+.PHONY : src/GeomObject.i
 
 # target to preprocess a source file
-src/GeomObj.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.i
-.PHONY : src/GeomObj.cpp.i
+src/GeomObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.i
+.PHONY : src/GeomObject.cpp.i
 
-src/GeomObj.s: src/GeomObj.cpp.s
-.PHONY : src/GeomObj.s
+src/GeomObject.s: src/GeomObject.cpp.s
+.PHONY : src/GeomObject.s
 
 # target to generate assembly for a file
-src/GeomObj.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.s
-.PHONY : src/GeomObj.cpp.s
+src/GeomObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.s
+.PHONY : src/GeomObject.cpp.s
 
 src/LibInterface.o: src/LibInterface.cpp.o
 .PHONY : src/LibInterface.o
@@ -338,9 +338,9 @@ help:
 	@echo "... Interp4Rotate"
 	@echo "... Interp4Set"
 	@echo "... cmds_interpreter"
-	@echo "... src/GeomObj.o"
-	@echo "... src/GeomObj.i"
-	@echo "... src/GeomObj.s"
+	@echo "... src/GeomObject.o"
+	@echo "... src/GeomObject.i"
+	@echo "... src/GeomObject.s"
 	@echo "... src/LibInterface.o"
 	@echo "... src/LibInterface.i"
 	@echo "... src/LibInterface.s"

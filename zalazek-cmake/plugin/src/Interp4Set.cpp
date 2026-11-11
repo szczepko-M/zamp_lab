@@ -2,7 +2,7 @@
 #include "Interp4Set.hh"
 
 #include "Set4GeomObjects.hh"
-#include "GeomObj.hh"
+#include "GeomObject.hh"
 
 
 using std::cout;
@@ -21,7 +21,7 @@ AbstractInterp4Command* Interp4Set::CreateCmd(void){
   return new Interp4Set;
 }
 
-AbstractInterp4Command* CreateCmd(void){
+AbstractInterp4Command* CreateCmdInterp(void){
   return Interp4Set::CreateCmd();
 }
 
@@ -32,7 +32,7 @@ void Interp4Set::PrintSyntax() const{
 }
 
 void Interp4Set::PrintCmd() const {
-  cout << "Set: " << _DistX << " " << _DistY << " " << _DistZ <<
+  cout << "Set: " << _ObjName << " " << _DistX << " " << _DistY << " " << _DistZ <<
   " " << _AngleX << " " << _AngleY << " " << _AngleZ << endl;
 }
 
@@ -40,7 +40,7 @@ bool Interp4Set::ReadParams(std::istream& rStrm_CmdList){
   rStrm_CmdList >> _ObjName >> _DistX >> _DistY >> _DistZ >> _AngleX >> _AngleY >> _AngleZ;
 
   if(rStrm_CmdList.fail()){
-    std::cerr << "!!! Błąd w ładowaniu parametrów" << endl;
+    std::cerr << "!!! Set: Błąd w ładowaniu parametrów" << endl;
     return false;
   }
 
@@ -49,7 +49,7 @@ bool Interp4Set::ReadParams(std::istream& rStrm_CmdList){
 
 
 bool Interp4Set::ExecCmd(Set4GeomObjects& Scn){
-  std::shared_ptr<GeomObj> pObj = Scn.FindGeomObj(_ObjName);
+  std::shared_ptr<GeomObject> pObj = Scn.FindGeomObj(_ObjName);
 
   if(!pObj){
     std::cerr << "!!! Move: Nie znaleziono obiektu " << _ObjName << " w scenie" << endl;

@@ -186,7 +186,7 @@ CMakeFiles/cmds_interpreter.dir/src/main.cpp.o: \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/LibInterface.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/AbstractInterp4Command.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/Set4GeomObjects.hh \
- /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObj.hh \
+ /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObject.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/g3dVector.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/geomVector.hh \
  /usr/include/c++/14/cmath /usr/include/math.h \

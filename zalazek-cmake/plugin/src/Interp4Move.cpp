@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Set4GeomObjects.hh"
 #include "Interp4Move.hh"
-#include "GeomObj.hh"
+#include "GeomObject.hh"
 #include <memory>
 //#include <cerrno>
 
@@ -21,7 +21,7 @@ AbstractInterp4Command* Interp4Move::CreateCmd(void) {
   return new Interp4Move;
 }
 
-AbstractInterp4Command* CreateCmd(void){
+AbstractInterp4Command* CreateCmdInterp(void){
   return Interp4Move::CreateCmd();
 }
 
@@ -39,7 +39,7 @@ bool Interp4Move::ReadParams(std::istream& rStrm_CmdList){
   rStrm_CmdList >> _ObjName >> _Speed >> _Distance;
 
   if(rStrm_CmdList.fail()){
-    std::cerr << "!!! Błąd w ładowaniu parametrów" << endl;
+    std::cerr << "!!! Move: Błąd w ładowaniu parametrów" << endl;
     return false;
   }
 
@@ -47,7 +47,7 @@ bool Interp4Move::ReadParams(std::istream& rStrm_CmdList){
 }
 
 bool Interp4Move::ExecCmd(Set4GeomObjects& Scn){
-  std::shared_ptr<GeomObj> pObj = Scn.FindGeomObj(_ObjName);
+  std::shared_ptr<GeomObject> pObj = Scn.FindGeomObj(_ObjName);
 
   if(!pObj){
     std::cerr << "!!! Move: Nie znaleziono obiektu " << _ObjName << " w scenie" << endl;

@@ -17,7 +17,7 @@ AbstractInterp4Command* Interp4Rotate::CreateCmd(void){
   return new Interp4Rotate;
 }
 
-AbstractInterp4Command* CreateCmd(void){
+AbstractInterp4Command* CreateCmdInterp(void){
   return Interp4Rotate::CreateCmd();
 }
 
@@ -37,7 +37,7 @@ bool Interp4Rotate::ReadParams(std::istream& rStrm_CmdList){
   rStrm_CmdList >> _ObjName >> _Axis >> _AngularSpeed >> _Rotation;
 
   if(rStrm_CmdList.fail()){
-    std::cerr << "!!! Błąd w ładowaniu parametrów" << endl;
+    std::cerr << "!!! Rotate: Błąd w ładowaniu parametrów" << endl;
     return false;
   }
 

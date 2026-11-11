@@ -8,7 +8,7 @@
 
 #include "AbstractInterp4Command.hh"
 #include "Set4GeomObjects.hh"
-#include "GeomObj.hh"
+#include "GeomObject.hh"
 
 class Interp4Move: public AbstractInterp4Command {
   std::string _ObjName;

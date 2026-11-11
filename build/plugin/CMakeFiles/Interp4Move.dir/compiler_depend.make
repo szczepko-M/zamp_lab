@@ -3,7 +3,7 @@
 
 plugin/CMakeFiles/Interp4Move.dir/src/Interp4Move.cpp.o: /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/src/Interp4Move.cpp \
   /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/AbstractInterp4Command.hh \
-  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObj.hh \
+  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObject.hh \
   /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/Set4GeomObjects.hh \
   /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/g3dVector.hh \
   /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/geomVector.hh \
@@ -431,6 +431,8 @@ plugin/CMakeFiles/Interp4Move.dir/src/Interp4Move.cpp.o:
 
 /usr/include/c++/14/bits/alloc_traits.h:
 
+/home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObject.hh:
+
 /usr/include/c++/14/bits/range_access.h:
 
 /usr/include/c++/14/cstdlib:
@@ -463,13 +465,13 @@ plugin/CMakeFiles/Interp4Move.dir/src/Interp4Move.cpp.o:
 
 /usr/include/c++/14/bits/stl_function.h:
 
-/usr/include/c++/14/backward/binders.h:
-
 /usr/include/c++/14/concepts:
 
 /usr/include/c++/14/bits/exception.h:
 
 /usr/include/c++/14/cctype:
+
+/usr/include/c++/14/backward/binders.h:
 
 /usr/include/c++/14/ext/concurrence.h:
 
@@ -562,8 +564,6 @@ plugin/CMakeFiles/Interp4Move.dir/src/Interp4Move.cpp.o:
 /usr/include/c++/14/bits/stl_pair.h:
 
 /usr/include/c++/14/bits/ostream_insert.h:
-
-/home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObj.hh:
 
 /usr/include/c++/14/bits/stringfwd.h:
 

@@ -164,7 +164,7 @@ plugin/CMakeFiles/Interp4Set.dir/src/Interp4Set.cpp.o: \
  /usr/include/c++/14/bits/uses_allocator.h \
  /usr/include/c++/14/bits/stl_multimap.h \
  /usr/include/c++/14/bits/erase_if.h \
- /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/../inc/GeomObj.hh \
+ /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/../inc/GeomObject.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/../inc/g3dVector.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/../inc/geomVector.hh \
  /usr/include/c++/14/cmath /usr/include/math.h \

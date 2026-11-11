@@ -46,7 +46,7 @@ CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o: \
  /usr/include/c++/14/bits/stl_multimap.h \
  /usr/include/c++/14/bits/range_access.h \
  /usr/include/c++/14/bits/erase_if.h \
- /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObj.hh \
+ /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObject.hh \
  /usr/include/c++/14/string /usr/include/c++/14/bits/stringfwd.h \
  /usr/include/c++/14/bits/char_traits.h \
  /usr/include/c++/14/bits/postypes.h /usr/include/c++/14/cwchar \

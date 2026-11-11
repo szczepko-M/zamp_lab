@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObj.cpp" "CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o.d"
+  "/home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObject.cpp" "CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o.d"
   "/home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/LibInterface.cpp" "CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o.d"
   "/home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/ProgramInterpreter.cpp" "CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o.d"
   "/home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/Set4GeomObjects.cpp" "CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o.d"

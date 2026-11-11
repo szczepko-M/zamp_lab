@@ -142,19 +142,19 @@ CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/ProgramInterpreter.cpp -o CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.s
 
-CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
-CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o: /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObj.cpp
-CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o -c /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObj.cpp
+CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o: /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObject.cpp
+CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o -c /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObject.cpp
 
-CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObj.cpp > CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.i
+CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObject.cpp > CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.i
 
-CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObj.cpp -o CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.s
+CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObject.cpp -o CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.s
 
 # Object files for target cmds_interpreter
 cmds_interpreter_OBJECTS = \
@@ -163,7 +163,7 @@ cmds_interpreter_OBJECTS = \
 "CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o" \
 "CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o" \
 "CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o" \
-"CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o"
+"CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o"
 
 # External object files for target cmds_interpreter
 cmds_interpreter_EXTERNAL_OBJECTS =
@@ -173,7 +173,7 @@ cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o
-cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/GeomObj.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/build.make
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/link.txt

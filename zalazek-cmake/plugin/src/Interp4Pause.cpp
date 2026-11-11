@@ -17,6 +17,10 @@ AbstractInterp4Command* Interp4Pause::CreateCmd(void){
   return new Interp4Pause;
 }
 
+AbstractInterp4Command* CreateCmdInterp(void){
+  return Interp4Pause::CreateCmd();
+}
+
 Interp4Pause::Interp4Pause(){}
 
 void Interp4Pause::PrintSyntax() const
@@ -32,7 +36,7 @@ bool Interp4Pause::ReadParams(std::istream& rStrm_CmdList){
   rStrm_CmdList >> _Time;
 
   if(rStrm_CmdList.fail()){
-    std::cerr << "!!! Błąd w ładowaniu parametrów" << endl;
+    std::cerr << "!!! Pause: Błąd w ładowaniu parametrów" << endl;
     return false;
   }
 

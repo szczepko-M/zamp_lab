@@ -6,10 +6,10 @@
 using namespace std;
 
 bool Set4GeomObjects::AddGeomObj(const std::string &ObjName){
-    shared_ptr<GeomObj> pObj;
+    shared_ptr<GeomObject> pObj;
 
     try {
-        pObj = make_shared<GeomObj>(ObjName);
+        pObj = make_shared<GeomObject>(ObjName);
     }
     catch (const exception &e){
         cerr << "!!!" << e.what() << endl;
@@ -26,11 +26,11 @@ bool Set4GeomObjects::AddGeomObj(const std::string &ObjName){
     return true;
 }
 
-std::shared_ptr<GeomObj> Set4GeomObjects::FindGeomObj(const std::string &ObjName) const {
+std::shared_ptr<GeomObject> Set4GeomObjects::FindGeomObj(const std::string &ObjName) const {
     const_iterator it = find(ObjName);
 
     if(it == end()){
-        return shared_ptr<GeomObj>();
+        return shared_ptr<GeomObject>();
     }
 
     return it->second;
