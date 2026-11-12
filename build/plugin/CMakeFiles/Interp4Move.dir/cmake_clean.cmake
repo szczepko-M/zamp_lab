@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Interp4Move.dir/link.d"
   "CMakeFiles/Interp4Move.dir/src/Interp4Move.cpp.o"
   "CMakeFiles/Interp4Move.dir/src/Interp4Move.cpp.o.d"
   "libInterp4Move.pdb"

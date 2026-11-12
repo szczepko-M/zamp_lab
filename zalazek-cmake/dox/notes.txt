@@ -33,3 +33,59 @@ można już myśleć nad execowaniem komendy typu move i pause - move > zmiana p
 
 vector 3d musi mieć przeciążenie operatorów -> będzie (nawet jest) udostępniony szablon
     chyba (defaultowo) iloczyn jest iloczynem skalarnym
+
+
+===== 12/11/26 =====
+
+#include <thread> -> lib z wątkami
+#inlcude <chrono> -> lib z czasem i guess
+
+thread xx(yy) - towrzy obiekt xx klasy wątek z funkcji yy
+
+xx.join() - 
+xx2.joinable() - wtf
+
+
+#include <mutex> -> lib z mutexami
+
+mutex guard
+
+guard.lock()
+guard.unlock()
+ - załatwie nam sprawę z wyświetlaniem/wykonywaniem części programu, np. pozwala na to, żeby nie przerywać np cout'a
+
+# podobno da się zrozumieć mutexy po kolejnym semie xdddd
+
+zamiast mutex guard lepiej zastosować std::lock_guard lock(guard) - !sprawdzić dokumentację
+
+WAŻNE - na razie zakładamy, że wczytujemy dwa pliki z poleceniami ! -> dwa wątki dla głównego programu
+przyda się później, na pewno trzeba będzie zrobić
+
+tworzymy klasę ComChannel, który będzie polem klasy ProgramInterpreter
+ - po co?
+    żeby przsłac stan obiektu
+
+    przykładowa definicja:
+
+    class CommChannel{
+        mutex _Guard;
+
+        public:
+            void print(const string& Msg);
+    }
+
+    void ComChannel::print(const String& Msg){
+        lock_guard<mutex> Lock(_Guard);
+
+        cout << Msg << endl;
+    }
+
+    wysyłamy dane obiektu po każdej elementarnej operacji - pozycje i kąty
+
+przyda się sleep_for -> żeby opóźnić reakcję pracy
+
+trzeba będzie dodać orientację obiektu -> warto się pobawić w kątami, żeby były w zakresie 0..360
+
+we wtyczkach należy zapamiętywać nazwę obiektu - chyba już zrobione
+
+poprawić, żeby móc wczytywac cały plik w całości po strumieniu 

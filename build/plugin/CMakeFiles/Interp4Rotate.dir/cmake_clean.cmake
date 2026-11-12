@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Interp4Rotate.dir/link.d"
   "CMakeFiles/Interp4Rotate.dir/src/Interp4Rotate.cpp.o"
   "CMakeFiles/Interp4Rotate.dir/src/Interp4Rotate.cpp.o.d"
   "libInterp4Rotate.pdb"
