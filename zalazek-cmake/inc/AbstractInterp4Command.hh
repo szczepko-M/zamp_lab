@@ -12,7 +12,7 @@ class AbstractInterp4Command {
   virtual void PrintSyntax() const = 0;
   virtual void PrintCmd() const = 0;
   virtual bool ReadParams(std::istream& rStrm_CmdList) = 0;
-  virtual bool ExecCmd(Set4GeomObjects& Scn) = 0;
+  virtual bool ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel) = 0;
 };
 
 #endif

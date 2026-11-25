@@ -17,8 +17,8 @@ static const char *PluginNames[] = {
 };
 */
 
-static const char *DefaultCmdFile_1 = "opis_dzialan_1.cmd";
-static const char *DefaultCmdFile_2 = "opis_dzialan_2.cmd";
+static const char *DefaultCmdFile_1 = "../zalazek-cmake/opis_dzialan_1.cmd";
+static const char *DefaultCmdFile_2 = "../zalazek-cmake/opis_dzialan_2.cmd";
 
 /*
 bool ReadAndPrintSyntaxes(const string &FileName, const Set4LibInterfaces &Plugins)
@@ -81,8 +81,6 @@ int main(int argc, char **argv){
   const char* CmdFileName_2 = (argc > 2) ? argv[2] : DefaultCmdFile_2;
 
   ProgramInterpreter prog_inter;
-
-  //tutaj podział na dwa wątki, ale każdy z włsnym plikiem komend
 
   return prog_inter.ExecProgram(CmdFileName_1) ? 0 : 1;
 }
