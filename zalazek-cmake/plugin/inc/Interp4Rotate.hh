@@ -7,6 +7,8 @@
 #endif
 
 #include "AbstractInterp4Command.hh"
+#include "Set4GeomObjects.hh"
+#include "GeomObject.hh"
 #include <string>
 
 class Interp4Rotate: public AbstractInterp4Command {
@@ -22,7 +24,7 @@ class Interp4Rotate: public AbstractInterp4Command {
     void PrintSyntax() const override;
     void PrintCmd() const override;
     bool ReadParams(std::istream& rStrm_CmdList) override;
-    bool ExecCmd(Set4GeomObjects& Scn) override;
+    bool ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel) override;
 
     static AbstractInterp4Command* CreateCmd();
 

@@ -58,7 +58,7 @@ bool Interp4Set::ReadParams(std::istream& rStrm_CmdList){
 }
 
 
-bool Interp4Set::ExecCmd(Set4GeomObjects& Scn){
+bool Interp4Set::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
   std::shared_ptr<GeomObject> pObj = Scn.FindGeomObj(_ObjName);
 
   if(!pObj){

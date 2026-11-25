@@ -15,13 +15,15 @@ class Interp4Move: public AbstractInterp4Command {
   double _Speed = 0;
   double _Distance = 0;
 
+  const int fps = 30;
+
   public:
     Interp4Move();
 
     void PrintSyntax() const override;
     void PrintCmd() const override;
     bool ReadParams(std::istream& rStrm_CmdList) override;
-    bool ExecCmd(Set4GeomObjects& Scn) override;
+    bool ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel) override;
 
     static AbstractInterp4Command* CreateCmd();
 

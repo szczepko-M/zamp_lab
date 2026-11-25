@@ -203,4 +203,17 @@ plugin/CMakeFiles/Interp4Move.dir/src/Interp4Move.cpp.o: \
  /usr/include/c++/14/bits/atomic_lockfree_defines.h \
  /usr/include/c++/14/backward/auto_ptr.h \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/inc/Interp4Move.hh \
- /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/../inc/AbstractInterp4Command.hh
+ /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/../inc/AbstractInterp4Command.hh \
+ /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/../inc/ComChannel.hh \
+ /usr/include/c++/14/mutex /usr/include/c++/14/bits/chrono.h \
+ /usr/include/c++/14/ratio /usr/include/c++/14/cstdint \
+ /usr/include/c++/14/limits /usr/include/c++/14/bits/parse_numbers.h \
+ /usr/include/c++/14/bits/std_mutex.h \
+ /usr/include/c++/14/bits/unique_lock.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/include/c++/14/math.h

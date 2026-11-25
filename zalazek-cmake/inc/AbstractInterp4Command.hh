@@ -1,6 +1,7 @@
 #ifndef ABSTRACTINTERP4COMMAND_HH
 #define ABSTRACTINTERP4COMMAND_HH
 
+#include "ComChannel.hh"
 #include <iosfwd>
 
 class Set4GeomObjects;

@@ -58,7 +58,7 @@ bool Interp4Rotate::ReadParams(std::istream& rStrm_CmdList){
   return true;
 }
 
-bool Interp4Rotate::ExecCmd(Set4GeomObjects& Scn){
+bool Interp4Rotate::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
   std::shared_ptr<GeomObject> pObj = Scn.FindGeomObj(_ObjName);
 
   if(!pObj){

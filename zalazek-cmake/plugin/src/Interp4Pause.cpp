@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Interp4Pause.hh"
+#include "Set4GeomObjects.hh"
+#include "Interp4Move.hh"
 #include <memory>
 
 using std::cout;
@@ -53,7 +55,7 @@ bool Interp4Pause::ReadParams(std::istream& rStrm_CmdList){
   return true;
 }
 
-bool Interp4Pause::ExecCmd(Set4GeomObjects& Scn){
+bool Interp4Pause::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
   // wykonanie przerwy w działaniu
 
   return true;

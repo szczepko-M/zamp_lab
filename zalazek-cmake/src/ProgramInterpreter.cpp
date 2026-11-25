@@ -8,6 +8,8 @@
 #include <fstream>
 #include <string>
 
+#include <thread>
+
 using namespace std;
 
 static const char *PluginNames[] = {

@@ -18,7 +18,7 @@ class Interp4Pause: public AbstractInterp4Command {
     void PrintSyntax() const override;
     void PrintCmd() const override;
     bool ReadParams(std::istream& rStrm_CmdList) override;
-    bool ExecCmd(Set4GeomObjects& Scn) override;
+    bool ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel) override;
 
     static AbstractInterp4Command* CreateCmd();
 };
