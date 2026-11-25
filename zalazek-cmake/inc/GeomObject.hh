@@ -2,6 +2,7 @@
 #define GEOMOBJECT_HH
 
 #include <string>
+#include <mutex>
 #include "g3dVector.hh"
 
 class GeomObject {
@@ -9,7 +10,7 @@ class GeomObject {
         g3d::Vector _Pos_m;
         g3d::Vector _RotAng_deg;
         std::string _Name;
-
+        std::mutex _Guard;
 
     public:
         GeomObject() = default;
@@ -23,6 +24,9 @@ class GeomObject {
         const g3d::Vector& GetRotAng_deg() const {return _RotAng_deg;};
         g3d::Vector& UsePos_m() {return _Pos_m;};
         g3d::Vector& UseRotAng_deg() {return _RotAng_deg;};
+
+        void lock(){_Guard.lock();};
+        void unlock(){_Guard.unlock();};
 };
 
 #endif

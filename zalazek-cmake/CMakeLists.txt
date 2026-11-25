@@ -17,7 +17,9 @@ add_executable(${PROJ_NAME}
   src/Set4LibInterfaces.cpp
   src/Set4GeomObjects.cpp
   src/ProgramInterpreter.cpp
-  src/GeomObject.cpp)
+  src/GeomObject.cpp
+  src/ComChannel.cpp
+  )
 
 target_link_libraries(${PROJ_NAME} ${CMAKE_DL_LIBS})
 

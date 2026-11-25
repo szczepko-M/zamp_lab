@@ -3,11 +3,10 @@
 #include "ProgramInterpreter.hh"
 //#include <stream>
 #include <iostream>
-#include <sstream>
+#include <fstream>
 #include <memory>
 #include <fstream>
 #include <string>
-
 #include <thread>
 
 using namespace std;
@@ -19,21 +18,24 @@ static const char *PluginNames[] = {
     "libInterp4Pause.so"
 };
 
-bool ProgramInterpreter::ExecProgram(const char* FileName_Prog){
-
-    // --- wczytanie wtyczek ---
+bool ProgramInterpreter::Init(){
     for(const char *pName : PluginNames){
         if(!_LibManager.AddPlugin(pName)){
             return false;
         }
-        
-        // cout << ":) Wtyczka \"" << pName << "\" została zaczytana poprawnie" << endl;
-    }
+    }   
+    return true;
+}
+
+bool ProgramInterpreter::ExecProgram(const char* FileName_Prog){
+
+    // --- wczytanie wtyczek ---
+    
 
     // --- zaczytanie pliku ---
     ifstream CmdFile(FileName_Prog);
     if (!CmdFile.is_open()) {
-        cerr << "!!! Nie mozna otworzyc pliku: " << FileName_Prog << endl;
+        _ComChannel.print_error("!!! Nie mozna otworzyc pliku: " + string(FileName_Prog));
         return false;
     }
 
@@ -47,32 +49,36 @@ bool ProgramInterpreter::ExecProgram(const char* FileName_Prog){
         // --- odszukanie wtyczki w bibliotece ---
         shared_ptr<LibInterface> pLib = _LibManager.FindPlugin(CmdName);
         if (!pLib) {
-            cerr << "!!! Polecenie " << CmdNo << ": brak wtyczki obsługujacej polecenie: "
-                << CmdName << endl;
+            _ComChannel.print_error("!!! Polecenie " + to_string(CmdNo) + ": brak wtyczki obsługujacej polecenie: " + string(CmdName));
             return false;
         }
 
         // --- utworzenie interpretera polecenia ---
         unique_ptr<AbstractInterp4Command> pInterp(pLib->CreateInterp());
         if (!pInterp) {
-            cerr << "!!! Linia " << CmdNo << ": nie udało sie utworzyć interpretera polecenia: "
-                << CmdName << endl;
+            _ComChannel.print_error("!!! Linia " + to_string(CmdNo) + ": nie udało sie utworzyć interpretera polecenia: " + string(CmdName));
             return false;
         }
 
         // --- odczytanie parametrów polecenia ---
-        if (!pInterp->ReadParams(CmdFile)) {
-            cerr << "!!! Linia " << CmdNo << ": niewłasciwe parametry polecenia "
-                << CmdName << ". Oczekiwana składnia:" << endl;
-            pInterp->PrintSyntax();
-            return false;
+        {
+            lock_guard<ComChannel> Lock(_ComChannel);
+            if (!pInterp->ReadParams(CmdFile)) {
+                _ComChannel.print_error("!!! Linia " + to_string(CmdNo) + ": niewłasciwe parametry polecenia: " + string(CmdName) + ". Oczekiwana składnia:");
+                pInterp->PrintSyntax();
+                return false;
+            }
         }
 
         // --- uzyskana, obrobiona komenda , która zostanie wykonana ---
-        pInterp->PrintCmd();
+        {
+            lock_guard<ComChannel> Lock(_ComChannel);
+            pInterp->PrintCmd();
+        }
+        
 
         // --- wykonanie obrobionego polecenia ---
-        if (!pInterp->ExecCmd(_Scn)) {
+        if (!pInterp->ExecCmd(_Scn, _ComChannel)) {
             cerr << "!!! Linia " << CmdNo << ": nieudane wykonanie polecenia "
                 << CmdName << endl;
             return false;
@@ -87,3 +93,4 @@ bool ProgramInterpreter::ExecProgram(const char* FileName_Prog){
 
     return true;
 }
+

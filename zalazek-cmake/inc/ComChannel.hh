@@ -9,9 +9,10 @@ class ComChannel{
         std::mutex _Guard;
 
     public:
-        void print(const std::string& Msg); //tu będzie potrzebna obłsuga stream'a
-        virtual void Lock(){_Guard.lock();}
-        virtual void Unlock(){_Guard.unlock();}
+        void print(const std::string& Msg);
+        void print_error(const std::string& Msg);
+        void lock(){_Guard.lock();};
+        void unlock(){_Guard.unlock();};
 };
 
 #endif

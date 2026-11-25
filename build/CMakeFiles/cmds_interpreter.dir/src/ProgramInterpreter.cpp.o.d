@@ -159,6 +159,14 @@ CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o: \
  /usr/include/c++/14/bits/basic_string.tcc \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/LibInterface.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/AbstractInterp4Command.hh \
+ /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/ComChannel.hh \
+ /usr/include/c++/14/mutex /usr/include/c++/14/bits/chrono.h \
+ /usr/include/c++/14/ratio /usr/include/c++/14/cstdint \
+ /usr/include/c++/14/limits /usr/include/c++/14/ctime \
+ /usr/include/c++/14/bits/parse_numbers.h \
+ /usr/include/c++/14/bits/std_mutex.h \
+ /usr/include/c++/14/bits/unique_lock.h \
+ /usr/include/x86_64-linux-gnu/c++/14/bits/error_constants.h \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/Set4GeomObjects.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObject.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/g3dVector.hh \
@@ -167,10 +175,8 @@ CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o: \
  /usr/include/c++/14/ios /usr/include/c++/14/bits/ios_base.h \
  /usr/include/c++/14/bits/locale_classes.h \
  /usr/include/c++/14/bits/locale_classes.tcc \
- /usr/include/c++/14/system_error \
- /usr/include/x86_64-linux-gnu/c++/14/bits/error_constants.h \
- /usr/include/c++/14/stdexcept /usr/include/c++/14/streambuf \
- /usr/include/c++/14/bits/streambuf.tcc \
+ /usr/include/c++/14/system_error /usr/include/c++/14/stdexcept \
+ /usr/include/c++/14/streambuf /usr/include/c++/14/bits/streambuf.tcc \
  /usr/include/c++/14/bits/basic_ios.h \
  /usr/include/c++/14/bits/locale_facets.h /usr/include/c++/14/cwctype \
  /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
@@ -192,7 +198,7 @@ CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/include/c++/14/iomanip /usr/include/c++/14/locale \
- /usr/include/c++/14/bits/locale_facets_nonio.h /usr/include/c++/14/ctime \
+ /usr/include/c++/14/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/14/bits/codecvt.h \
@@ -203,4 +209,6 @@ CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o: \
  /usr/include/assert.h /usr/include/c++/14/fstream \
  /usr/include/x86_64-linux-gnu/c++/14/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/c++io.h \
- /usr/include/c++/14/bits/fstream.tcc
+ /usr/include/c++/14/bits/fstream.tcc /usr/include/c++/14/thread \
+ /usr/include/c++/14/bits/std_thread.h \
+ /usr/include/c++/14/bits/this_thread_sleep.h

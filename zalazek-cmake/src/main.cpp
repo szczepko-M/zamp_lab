@@ -5,82 +5,42 @@
 //#include "AbstractInterp4Command.hh"
 //#include "Set4LibInterfaces.hh"
 #include "ProgramInterpreter.hh"
+#include <functional>
+#include <thread>
 
 using namespace std;
-
-/*
-static const char *PluginNames[] = {
-  "libInterp4Move.so",
-  "libInterp4Rotate.so",
-  "libInterp4Set.so",
-  "libInterp4Pause.so"
-};
-*/
 
 static const char *DefaultCmdFile_1 = "../zalazek-cmake/opis_dzialan_1.cmd";
 static const char *DefaultCmdFile_2 = "../zalazek-cmake/opis_dzialan_2.cmd";
 
-/*
-bool ReadAndPrintSyntaxes(const string &FileName, const Set4LibInterfaces &Plugins)
-{
-  ifstream CmdFile(FileName);
-  if (!CmdFile.is_open()) {
-    cerr << "!!! Nie mozna otworzyc pliku: " << FileName << endl;
-    return false;
-  }
-
-  string CmdName;
-  while (CmdFile >> CmdName) {
-    shared_ptr<LibInterface> pLib = Plugins.FindPlugin(CmdName);
-    if (!pLib) {
-      cerr << "!!! Brak wtyczki obslugujacej polecenie: " << CmdName << endl;
-      return false;
-    }
-
-    unique_ptr<AbstractInterp4Command> pInterp(pLib->CreateInterp());
-    if (!pInterp) {
-      cerr << "!!! Nie udalo sie utworzyc interpretera polecenia: "
-           << CmdName << endl;
-      return false;
-    }
-
-    pInterp->PrintSyntax();
-  }
-
-  // Petla konczy sie przy braku kolejnego slowa: to koniec pliku (sukces)
-  // albo blad odczytu.
-  if (!CmdFile.eof()) {
-    cerr << "!!! Blad odczytu pliku: " << FileName << endl;
-    return false;
-  }
-  return true;
+// --- funkcja do thread'a ---
+static void RunProgram(ProgramInterpreter &Interp, const char* cmdfilename, bool &result){
+    result = Interp.ExecProgram(cmdfilename);
 }
-*/
-
-/*
-int main(int argc, char **argv)
-{
-  const string CmdFileName = (argc > 1) ? argv[1] : DefaultCmdFile;
-
-  Set4LibInterfaces Plugins;
-
-  for (const char *pName : PluginNames) {
-    if (!Plugins.AddPlugin(pName)) return 1;
-    cout << ":)  Wtyczka \"" << pName << "\" zostala poprawnie zaladowana." << endl;
-  }
-  cout << endl;
-
-  if (!ReadAndPrintSyntaxes(CmdFileName, Plugins)) return 1;
-
-  return 0;
-}
-*/
 
 int main(int argc, char **argv){
   const char* CmdFileName_1 = (argc > 2) ? argv[1] : DefaultCmdFile_1;
   const char* CmdFileName_2 = (argc > 2) ? argv[2] : DefaultCmdFile_2;
 
-  ProgramInterpreter prog_inter;
+  ProgramInterpreter prog_interp;
 
-  return prog_inter.ExecProgram(CmdFileName_1) ? 0 : 1;
+  if(!prog_interp.Init()){
+    return 1;
+  }
+
+  bool prog_OK_1 = false;
+  bool prog_OK_2 = false;
+
+  thread Th_1(RunProgram, ref(prog_interp), CmdFileName_1, ref(prog_OK_1));
+  thread Th_2(RunProgram, ref(prog_interp), CmdFileName_2, ref(prog_OK_2));
+
+  Th_1.join();
+  Th_2.join();
+
+  cout << "Thread 1: " << prog_OK_1 << endl;
+  cout << "Thread_2: " << prog_OK_2 << endl;
+
+  bool final_result = (prog_OK_1 && prog_OK_2) ? 0 : 1;
+
+  return final_result;
 }

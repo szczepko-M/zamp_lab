@@ -181,6 +181,30 @@ Interp4Pause/fast:
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/build
 .PHONY : Interp4Pause/fast
 
+src/ComChannel.o: src/ComChannel.cpp.o
+.PHONY : src/ComChannel.o
+
+# target to build an object file
+src/ComChannel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o
+.PHONY : src/ComChannel.cpp.o
+
+src/ComChannel.i: src/ComChannel.cpp.i
+.PHONY : src/ComChannel.i
+
+# target to preprocess a source file
+src/ComChannel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.i
+.PHONY : src/ComChannel.cpp.i
+
+src/ComChannel.s: src/ComChannel.cpp.s
+.PHONY : src/ComChannel.s
+
+# target to generate assembly for a file
+src/ComChannel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.s
+.PHONY : src/ComChannel.cpp.s
+
 src/GeomObject.o: src/GeomObject.cpp.o
 .PHONY : src/GeomObject.o
 
@@ -338,6 +362,9 @@ help:
 	@echo "... Interp4Rotate"
 	@echo "... Interp4Set"
 	@echo "... cmds_interpreter"
+	@echo "... src/ComChannel.o"
+	@echo "... src/ComChannel.i"
+	@echo "... src/ComChannel.s"
 	@echo "... src/GeomObject.o"
 	@echo "... src/GeomObject.i"
 	@echo "... src/GeomObject.s"

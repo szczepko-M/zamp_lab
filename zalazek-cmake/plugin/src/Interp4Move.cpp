@@ -7,6 +7,8 @@
 
 #include <unistd.h>
 #include <math.h>
+#include <chrono>
+#include <thread>
 
 using std::cout;
 using std::endl;
@@ -55,7 +57,17 @@ bool Interp4Move::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
   std::shared_ptr<GeomObject> pObj = Scn.FindGeomObj(_ObjName);
 
   if(!pObj){
-    std::cerr << "!!! Move: Nie znaleziono obiektu " << _ObjName << " w scenie" << endl;
+    Channel.print_error("!!! Move: Nie znaleziono obiektu " + _ObjName + " w scenie");
+    return false;
+  }
+
+  if(_Distance <= 0){
+    Channel.print_error("!!! Move: Zerowy/Ujemny dystans dla obiektu " + _ObjName + " w scenie");
+    return true;
+  }
+
+  if(_Speed == 0){
+    Channel.print_error("!!! Move: Zerowa prędkość dla obiektu" + _ObjName + " w scenie");
     return false;
   }
 
@@ -70,38 +82,39 @@ bool Interp4Move::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
     << pObj->GetPos_m()[2] << " " << endl;
   */ 
 
-  int frames = abs(fps * _Distance / _Speed);
-  int direction = _Speed / abs(_Speed);
-
+  const int fps = 30;
+  const double pi = 3.141;
+  const double direction = (_Speed > 0) ? 1.0 : -1.0;
+  const int frames = std::max(1, (int)std::ceil(fps * _Distance / std::fabs(_Speed)));
   double delta_dist = _Distance / frames;
-  double time_step_us = 1000000 / fps;
+  std::chrono::microseconds time_step_us = std::chrono::microseconds(1000000 / fps);
 
   for(int i = 0; i<frames; i++){
-    pObj->Lock();
+    g3d::Vector curr_pos;
+    {
+      std::lock_guard<GeomObject> Lock(*pObj);
 
-    double y_rad = pObj->GetRotAng_deg()[1] * M_PI / 180.0;
-    double z_rad = pObj->GetRotAng_deg()[2] * M_PI / 180.0;
+      double y_rad = pObj->GetRotAng_deg()[1] * pi / 180.0;
+      double z_rad = pObj->GetRotAng_deg()[2] * pi / 180.0;
 
-    g3d::Vector curr_pos = pObj->GetPos_m();
+      curr_pos = pObj->GetPos_m();
 
-    curr_pos[0] += delta_dist * cos(y_rad) * cos(z_rad);
-    curr_pos[1] += delta_dist * cos(y_rad) * sin(z_rad);
-    curr_pos[2] -= direction * delta_dist * sin(y_rad);
+      curr_pos[0] += direction * delta_dist * std::cos(y_rad) * std::cos(z_rad);
+      curr_pos[1] += direction * delta_dist * std::cos(y_rad) * std::sin(z_rad);
+      curr_pos[2] -= direction * delta_dist * std::sin(y_rad);
 
-    pObj->UsePos_m(curr_pos);
+      pObj->UsePos_m() = curr_pos;      
+    }
 
-    std::stringstream info_stream;
-
+    std::ostringstream info_stream;
     info_stream << "# Move: " << _ObjName << ", nowa pozycja: "
     << curr_pos[0] << ", "
     << curr_pos[1] << ", "
-    << curr_pos[2] << " " << endl;
+    << curr_pos[2] << " ";
 
-    ComChannel.Lock();
-    ComChannel.print(info_stream);
-    ComChannel.Unlock();
+    Channel.print(info_stream.str());
 
-    pObj->Unlock();
+    std::this_thread::sleep_for(time_step_us);
   }
 
   return true;

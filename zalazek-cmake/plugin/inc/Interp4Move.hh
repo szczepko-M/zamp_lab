@@ -15,8 +15,6 @@ class Interp4Move: public AbstractInterp4Command {
   double _Speed = 0;
   double _Distance = 0;
 
-  const int fps = 30;
-
   public:
     Interp4Move();
 

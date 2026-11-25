@@ -8,6 +8,7 @@ cmds_interpreter: \
   CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o \
   CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o \
   CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o \
+  CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libdl.a \
   /usr/lib/gcc/x86_64-linux-gnu/14/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so \
@@ -55,6 +56,8 @@ CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o:
 CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o:
 
 CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o:
+
+CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libdl.a:
 

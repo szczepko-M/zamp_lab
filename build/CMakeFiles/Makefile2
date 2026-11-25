@@ -119,12 +119,12 @@ CMakeFiles/cmds_interpreter.dir/all: plugin/CMakeFiles/Interp4Set.dir/all
 CMakeFiles/cmds_interpreter.dir/all: plugin/CMakeFiles/Interp4Pause.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=9,10,11,12,13,14,15 "Built target cmds_interpreter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=9,10,11,12,13,14,15,16 "Built target cmds_interpreter"
 .PHONY : CMakeFiles/cmds_interpreter.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cmds_interpreter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mszczepk/zamp/zamp_lab/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mszczepk/zamp/zamp_lab/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cmds_interpreter.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mszczepk/zamp/zamp_lab/build/CMakeFiles 0
 .PHONY : CMakeFiles/cmds_interpreter.dir/rule
@@ -139,7 +139,7 @@ CMakeFiles/cmds_interpreter.dir/codegen: plugin/CMakeFiles/Interp4Rotate.dir/all
 CMakeFiles/cmds_interpreter.dir/codegen: plugin/CMakeFiles/Interp4Set.dir/all
 CMakeFiles/cmds_interpreter.dir/codegen: plugin/CMakeFiles/Interp4Pause.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=9,10,11,12,13,14,15 "Finished codegen for target cmds_interpreter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=9,10,11,12,13,14,15,16 "Finished codegen for target cmds_interpreter"
 .PHONY : CMakeFiles/cmds_interpreter.dir/codegen
 
 # clean rule for target.

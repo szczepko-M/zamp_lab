@@ -8,6 +8,8 @@ using namespace std;
 bool Set4GeomObjects::AddGeomObj(const std::string &ObjName){
     shared_ptr<GeomObject> pObj;
 
+    lock_guard<mutex> Lock(_MapGuard);
+
     try {
         pObj = make_shared<GeomObject>(ObjName);
     }
@@ -27,6 +29,8 @@ bool Set4GeomObjects::AddGeomObj(const std::string &ObjName){
 }
 
 std::shared_ptr<GeomObject> Set4GeomObjects::FindGeomObj(const std::string &ObjName) const {
+    lock_guard<mutex> Lock(_MapGuard);
+
     const_iterator it = find(ObjName);
 
     if(it == end()){

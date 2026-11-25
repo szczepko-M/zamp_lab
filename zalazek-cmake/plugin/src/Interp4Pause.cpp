@@ -3,6 +3,8 @@
 #include "Set4GeomObjects.hh"
 #include "Interp4Move.hh"
 #include <memory>
+#include <thread>
+#include <mutex>
 
 using std::cout;
 using std::endl;
@@ -57,6 +59,7 @@ bool Interp4Pause::ReadParams(std::istream& rStrm_CmdList){
 
 bool Interp4Pause::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
   // wykonanie przerwy w działaniu
+  std::this_thread::sleep_for(std::chrono::milliseconds(_Time));
 
   return true;
 }

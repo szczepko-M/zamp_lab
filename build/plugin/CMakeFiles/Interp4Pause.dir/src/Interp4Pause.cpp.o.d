@@ -211,4 +211,6 @@ plugin/CMakeFiles/Interp4Pause.dir/src/Interp4Pause.cpp.o: \
  /usr/include/c++/14/bits/atomic_base.h \
  /usr/include/c++/14/bits/atomic_lockfree_defines.h \
  /usr/include/c++/14/backward/auto_ptr.h \
- /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/inc/Interp4Move.hh
+ /home/mszczepk/zamp/zamp_lab/zalazek-cmake/plugin/inc/Interp4Move.hh \
+ /usr/include/c++/14/thread /usr/include/c++/14/bits/std_thread.h \
+ /usr/include/c++/14/bits/this_thread_sleep.h

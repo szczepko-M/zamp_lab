@@ -185,6 +185,13 @@ CMakeFiles/cmds_interpreter.dir/src/main.cpp.o: \
  /usr/include/c++/14/bits/erase_if.h \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/LibInterface.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/AbstractInterp4Command.hh \
+ /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/ComChannel.hh \
+ /usr/include/c++/14/mutex /usr/include/c++/14/bits/chrono.h \
+ /usr/include/c++/14/ratio /usr/include/c++/14/cstdint \
+ /usr/include/c++/14/limits /usr/include/c++/14/ctime \
+ /usr/include/c++/14/bits/parse_numbers.h \
+ /usr/include/c++/14/bits/std_mutex.h \
+ /usr/include/c++/14/bits/unique_lock.h \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/Set4GeomObjects.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/GeomObject.hh \
  /home/mszczepk/zamp/zamp_lab/zalazek-cmake/inc/g3dVector.hh \
@@ -201,11 +208,14 @@ CMakeFiles/cmds_interpreter.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/include/c++/14/iomanip /usr/include/c++/14/locale \
- /usr/include/c++/14/bits/locale_facets_nonio.h /usr/include/c++/14/ctime \
+ /usr/include/c++/14/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/14/bits/locale_facets_nonio.tcc \
  /usr/include/c++/14/bits/locale_conv.h \
  /usr/include/c++/14/bits/quoted_string.h /usr/include/c++/14/sstream \
  /usr/include/c++/14/bits/sstream.tcc /usr/include/c++/14/cassert \
- /usr/include/assert.h
+ /usr/include/assert.h /usr/include/c++/14/functional \
+ /usr/include/c++/14/bits/std_function.h /usr/include/c++/14/thread \
+ /usr/include/c++/14/bits/std_thread.h \
+ /usr/include/c++/14/bits/this_thread_sleep.h

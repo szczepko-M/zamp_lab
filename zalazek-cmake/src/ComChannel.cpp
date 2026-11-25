@@ -1,14 +1,18 @@
 #include "ComChannel.hh"
 #include <mutex>
+#include <iostream>
 
 using namespace std;
 
-ComChannel::ComChannel(){
 
+void ComChannel::print(const string& Msg){
+    std::lock_guard<std::mutex> Lock(_Guard);
+
+    std::cout << Msg << std::endl;
 }
 
-ComChannel::print(const string& Msg){
-    std::lock_guard<mutex> Lock(_Guard);
+void ComChannel::print_error(const string& Msg){
+    std::lock_guard<std::mutex> Lock(_Guard);
 
-    std << Msg << endl;
+    std::cerr << Msg << std::endl;
 }

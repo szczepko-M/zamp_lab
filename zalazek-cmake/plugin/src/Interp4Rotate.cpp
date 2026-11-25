@@ -5,6 +5,8 @@
 #include <memory>
 #include <cmath>
 
+#include <thread>
+
 using std::cout;
 using std::endl;
 
@@ -66,23 +68,40 @@ bool Interp4Rotate::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
     return false;
   }
 
-  if(_Axis == "OX"){
-    pObj->UseRotAng_deg()[0] = fmod((pObj->UseRotAng_deg()[0] + _Rotation), 360);
-  }
-  else if(_Axis == "OY"){
-    pObj->UseRotAng_deg()[1] = fmod((pObj->UseRotAng_deg()[1] + _Rotation), 360);
-  }
-  else if(_Axis == "OZ"){
-    pObj->UseRotAng_deg()[2] = fmod((pObj->UseRotAng_deg()[2] + _Rotation), 360);
-  }
-  else{
-    return false;
-  }
+  const int fps = 30;
+  const double direction = (_AngularSpeed > 0) ? 1.0 : -1.0;
+  const int frames = std::max(1, (int)std::ceil(fps * _Rotation / std::fabs(_AngularSpeed)));
+  double delta_angle = _Rotation / frames;
+  std::chrono::microseconds time_step_us = std::chrono::microseconds(1000000 / fps);
 
-  cout << "# Rotatr: " << _ObjName << ", nowa pozycja: "
-    << pObj->GetRotAng_deg()[0] << ", "
-    << pObj->GetRotAng_deg()[1] << ", "
-    << pObj->GetRotAng_deg()[2] << " " << endl;
+  for(int i=0; i<frames; i++){
+    g3d::Vector curr_angle;
+    {
+      std::lock_guard<GeomObject> Lock(*pObj);
+
+      curr_angle = pObj->GetRotAng_deg();
+
+      if(_Axis == "OX"){
+        pObj->UseRotAng_deg()[0] = std::fmod((pObj->UseRotAng_deg()[0] + delta_angle), 360);
+      }
+      else if(_Axis == "OY"){
+        pObj->UseRotAng_deg()[1] = std::fmod((pObj->UseRotAng_deg()[1] + delta_angle), 360);
+      }
+      else{
+        pObj->UseRotAng_deg()[2] = std::fmod((pObj->UseRotAng_deg()[2] + delta_angle), 360);
+      }
+    }
+
+    std::ostringstream info_stream;
+    info_stream << "# Rotatr: " << _ObjName << ", nowa pozycja: "
+    << curr_angle[0] << ", "
+    << curr_angle[1] << ", "
+    << curr_angle[2];
+
+    Channel.print(info_stream.str());
+
+    std::this_thread::sleep_for(time_step_us);
+  }  
 
   return true;
 }

@@ -156,6 +156,20 @@ CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/GeomObject.cpp -o CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.s
 
+CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o: /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/ComChannel.cpp
+CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o -c /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/ComChannel.cpp
+
+CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/ComChannel.cpp > CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.i
+
+CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mszczepk/zamp/zamp_lab/zalazek-cmake/src/ComChannel.cpp -o CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.s
+
 # Object files for target cmds_interpreter
 cmds_interpreter_OBJECTS = \
 "CMakeFiles/cmds_interpreter.dir/src/main.cpp.o" \
@@ -163,7 +177,8 @@ cmds_interpreter_OBJECTS = \
 "CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o" \
 "CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o" \
 "CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o" \
-"CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o"
+"CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o" \
+"CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o"
 
 # External object files for target cmds_interpreter
 cmds_interpreter_EXTERNAL_OBJECTS =
@@ -174,10 +189,11 @@ cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/Set4LibInterfaces.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/Set4GeomObjects.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/ProgramInterpreter.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/ComChannel.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/build.make
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable cmds_interpreter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mszczepk/zamp/zamp_lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable cmds_interpreter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cmds_interpreter.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -E echo 
 	/usr/bin/cmake -E echo \ Utworzony\ zostal\ program:\ \ cmds_interpreter

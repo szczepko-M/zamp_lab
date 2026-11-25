@@ -78,6 +78,7 @@ plugin/CMakeFiles/Interp4Pause.dir/src/Interp4Pause.cpp.o
  /usr/include/c++/14/bits/sstream.tcc
  /usr/include/c++/14/bits/std_abs.h
  /usr/include/c++/14/bits/std_mutex.h
+ /usr/include/c++/14/bits/std_thread.h
  /usr/include/c++/14/bits/stl_algobase.h
  /usr/include/c++/14/bits/stl_construct.h
  /usr/include/c++/14/bits/stl_function.h
@@ -94,6 +95,7 @@ plugin/CMakeFiles/Interp4Pause.dir/src/Interp4Pause.cpp.o
  /usr/include/c++/14/bits/streambuf.tcc
  /usr/include/c++/14/bits/streambuf_iterator.h
  /usr/include/c++/14/bits/stringfwd.h
+ /usr/include/c++/14/bits/this_thread_sleep.h
  /usr/include/c++/14/bits/unique_lock.h
  /usr/include/c++/14/bits/unique_ptr.h
  /usr/include/c++/14/bits/uses_allocator.h
@@ -140,6 +142,7 @@ plugin/CMakeFiles/Interp4Pause.dir/src/Interp4Pause.cpp.o
  /usr/include/c++/14/streambuf
  /usr/include/c++/14/string
  /usr/include/c++/14/system_error
+ /usr/include/c++/14/thread
  /usr/include/c++/14/tuple
  /usr/include/c++/14/type_traits
  /usr/include/c++/14/typeinfo
