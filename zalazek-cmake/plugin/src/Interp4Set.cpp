@@ -62,7 +62,8 @@ bool Interp4Set::ExecCmd(Set4GeomObjects& Scn){
   std::shared_ptr<GeomObject> pObj = Scn.FindGeomObj(_ObjName);
 
   if(!pObj){
-    std::cout << "!!! Set: Nie znaleziono obiektu " << _ObjName << " w scenie. Tworzenie nowego obiektu..." << endl;
+    std::cout << "!!! Set: Nie znaleziono obiektu " << _ObjName << " w scenie." << endl;
+    std::cout << "Tworzenie nowego obiektu..." << endl;
     
     if(!Scn.AddGeomObj(_ObjName)){
       return false;
@@ -76,6 +77,7 @@ bool Interp4Set::ExecCmd(Set4GeomObjects& Scn){
   // pObj->
 
   pObj->UsePos_m() = g3d::Vector(_DistX, _DistY, _DistZ);
+  pObj->UseRotAng_deg() = g3d::Vector(_AngleX, _AngleY, _AngleZ);
 
   cout << "# Wykonano operację Set na obiekcie " << _ObjName << endl;
 

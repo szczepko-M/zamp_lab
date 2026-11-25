@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Interp4Pause.hh"
+#include <memory>
 
 using std::cout;
 using std::endl;

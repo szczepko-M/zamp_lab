@@ -1,5 +1,9 @@
 #include <iostream>
 #include "Interp4Rotate.hh"
+#include "GeomObject.hh"
+#include "Set4GeomObjects.hh"
+#include <memory>
+#include <cmath>
 
 using std::cout;
 using std::endl;
@@ -55,7 +59,30 @@ bool Interp4Rotate::ReadParams(std::istream& rStrm_CmdList){
 }
 
 bool Interp4Rotate::ExecCmd(Set4GeomObjects& Scn){
-  // wykonanie rotacji
+  std::shared_ptr<GeomObject> pObj = Scn.FindGeomObj(_ObjName);
+
+  if(!pObj){
+    std::cerr << "!!! Move: Nie znaleziono obiektu " << _ObjName << " w scenie" << endl;
+    return false;
+  }
+
+  if(_Axis == "OX"){
+    pObj->UseRotAng_deg()[0] = fmod((pObj->UseRotAng_deg()[0] + _Rotation), 360);
+  }
+  else if(_Axis == "OY"){
+    pObj->UseRotAng_deg()[1] = fmod((pObj->UseRotAng_deg()[1] + _Rotation), 360);
+  }
+  else if(_Axis == "OZ"){
+    pObj->UseRotAng_deg()[2] = fmod((pObj->UseRotAng_deg()[2] + _Rotation), 360);
+  }
+  else{
+    return false;
+  }
+
+  cout << "# Rotatr: " << _ObjName << ", nowa pozycja: "
+    << pObj->GetRotAng_deg()[0] << ", "
+    << pObj->GetRotAng_deg()[1] << ", "
+    << pObj->GetRotAng_deg()[2] << " " << endl;
 
   return true;
 }

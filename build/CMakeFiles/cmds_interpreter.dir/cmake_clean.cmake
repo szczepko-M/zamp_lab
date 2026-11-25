@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cmds_interpreter.dir/link.d"
   "CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o"
   "CMakeFiles/cmds_interpreter.dir/src/GeomObject.cpp.o.d"
   "CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o"

@@ -30,9 +30,9 @@ set_target_properties(${PROJ_NAME} PROPERTIES
 
 add_dependencies(${PROJ_NAME} Interp4Move Interp4Rotate Interp4Set Interp4Pause)
 
-configure_file(${PROJECT_SOURCE_DIR}/opis_dzialan.cmd
-               ${CMAKE_BINARY_DIR}/opis_dzialan.cmd COPYONLY)
-file(COPY ${PROJECT_SOURCE_DIR}/examples DESTINATION ${CMAKE_BINARY_DIR})
+# configure_file(${PROJECT_SOURCE_DIR}/opis_dzialan_1.cmd
+#                ${CMAKE_BINARY_DIR}/opis_dzialan_1.cmd COPYONLY)
+# file(COPY ${PROJECT_SOURCE_DIR}/examples DESTINATION ${CMAKE_BINARY_DIR})
 
 add_custom_command(TARGET ${PROJ_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E echo ""

@@ -14,15 +14,15 @@ class GeomObject {
     public:
         GeomObject() = default;
         explicit GeomObject(const std::string& Name,
-            const g3d::Vector& RotAng_deg = g3d::Vector(),
-            const g3d::Vector& Pos_m = g3d::Vector());
+                            const g3d::Vector& Pos_m = g3d::Vector(),
+                            const g3d::Vector& RotAng_deg = g3d::Vector());
         
         const std::string& GetName() const {return _Name;};
         void SetName(const std::string& Name) {_Name = Name;};
         const g3d::Vector& GetPos_m() const {return _Pos_m;};
+        const g3d::Vector& GetRotAng_deg() const {return _RotAng_deg;};
         g3d::Vector& UsePos_m() {return _Pos_m;};
-        // zrobić dwie fukcje setrot i userot
-    
+        g3d::Vector& UseRotAng_deg() {return _RotAng_deg;};
 };
 
 #endif

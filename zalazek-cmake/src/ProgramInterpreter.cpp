@@ -36,21 +36,16 @@ bool ProgramInterpreter::ExecProgram(const char* FileName_Prog){
     }
 
     // --- część główna programu ---
-    string Line;
-    unsigned LineNo = 0;
+    string CmdName;
+    unsigned CmdNo = 0;
 
-    while (getline(CmdFile, Line)) {
-        ++LineNo; // odliczanie linii z pliku .cmd
-        if (!Line.empty() && Line.back() == '\r') Line.pop_back(); //usunięcie znaków \r
-
-        istringstream LineStrm(Line);
-        string CmdName;
-        if (!(LineStrm >> CmdName)) continue; //przypadek pustej linii
+    while (CmdFile >> CmdName) {
+        ++CmdNo; // odliczanie komendy z pliku .cmd
 
         // --- odszukanie wtyczki w bibliotece ---
         shared_ptr<LibInterface> pLib = _LibManager.FindPlugin(CmdName);
         if (!pLib) {
-            cerr << "!!! Linia " << LineNo << ": brak wtyczki obsługujacej polecenie: "
+            cerr << "!!! Polecenie " << CmdNo << ": brak wtyczki obsługujacej polecenie: "
                 << CmdName << endl;
             return false;
         }
@@ -58,24 +53,15 @@ bool ProgramInterpreter::ExecProgram(const char* FileName_Prog){
         // --- utworzenie interpretera polecenia ---
         unique_ptr<AbstractInterp4Command> pInterp(pLib->CreateInterp());
         if (!pInterp) {
-            cerr << "!!! Linia " << LineNo << ": nie udało sie utworzyć interpretera polecenia: "
+            cerr << "!!! Linia " << CmdNo << ": nie udało sie utworzyć interpretera polecenia: "
                 << CmdName << endl;
             return false;
         }
 
         // --- odczytanie parametrów polecenia ---
-        if (!pInterp->ReadParams(LineStrm)) {
-            cerr << "!!! Linia " << LineNo << ": niewłasciwe parametry polecenia "
+        if (!pInterp->ReadParams(CmdFile)) {
+            cerr << "!!! Linia " << CmdNo << ": niewłasciwe parametry polecenia "
                 << CmdName << ". Oczekiwana składnia:" << endl;
-            pInterp->PrintSyntax();
-            return false;
-        }
-
-        // --- opcjonalne, jeśli jest dodatkowy parametr ---
-        string Extra;
-        if (LineStrm >> Extra) {
-            cerr << "!!! Linia " << LineNo << ": nadmiarowy parametr \"" << Extra
-                << "\" w poleceniu " << CmdName << ". Oczekiwana składnia:" << endl;
             pInterp->PrintSyntax();
             return false;
         }
@@ -85,7 +71,7 @@ bool ProgramInterpreter::ExecProgram(const char* FileName_Prog){
 
         // --- wykonanie obrobionego polecenia ---
         if (!pInterp->ExecCmd(_Scn)) {
-            cerr << "!!! Linia " << LineNo << ": nieudane wykonanie polecenia "
+            cerr << "!!! Linia " << CmdNo << ": nieudane wykonanie polecenia "
                 << CmdName << endl;
             return false;
         }
