@@ -104,16 +104,16 @@ bool Interp4Move::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
       curr_pos[2] -= direction * delta_dist * std::sin(y_rad);
 
       pObj->UsePos_m() = curr_pos;      
+
+      std::ostringstream info_stream;
+      info_stream << "# Move: " << _ObjName << ", nowa pozycja: "
+      << curr_pos[0] << ", "
+      << curr_pos[1] << ", "
+      << curr_pos[2] << " ";
+
+      Channel.print(info_stream.str());
     }
-
-    std::ostringstream info_stream;
-    info_stream << "# Move: " << _ObjName << ", nowa pozycja: "
-    << curr_pos[0] << ", "
-    << curr_pos[1] << ", "
-    << curr_pos[2] << " ";
-
-    Channel.print(info_stream.str());
-
+    
     std::this_thread::sleep_for(time_step_us);
   }
 

@@ -88,4 +88,46 @@ trzeba będzie dodać orientację obiektu -> warto się pobawić w kątami, żeb
 
 we wtyczkach należy zapamiętywać nazwę obiektu - chyba już zrobione
 
-poprawić, żeby móc wczytywac cały plik w całości po strumieniu 
+poprawić, żeby móc wczytywac cały plik w całości po strumieniu
+
+=== 26.11.2026 ===
+
+konfig od teraz będzie w pliku xml
+
+co w pliku?
+    - nazwy pluginów (plików .so)
+    - obiekty -> wszystkie reprezentowane przez parametry niżej + nazwę
+    
+    - parametr "shift" to przesunięcie osi obrotu obiektu
+    - scale - rozciągnięcie/skurczenie obiektu
+    - rot - obrót
+    - trans - przesunięcie
+
+    jednostki: [m], [deg]
+
+na razie nie trzeba interpretować translacji z pliku
+
+na pewno trzeba będzie zapisać typ obiektu, shift, skalę i RGB (tablica 3 el)
+
+co wysyłamy do serwera?
+    wszystkie parametry z obiektu
+
+warto dorobić parę wtyczek do obsługi dodanych parametrów
+
+> sprawdzić zalążek, tam jest zrobiony parser danych
+
+xer.sc "kser esce"
+
+po wczytaniu pliku config wyświetlić wczytane wtyczki + dodane obiekty
+
+program uruchamiany z parametrem kartoteki (folder) -> w folderze: config + opis sekwencji w configu
+
+//parser będzie zwracał wartości domyślne, o ile nie były zdefiniowane nowe
+
+rada: stowrzyć klasę config, która ma dwie listy: lista wtyczek i lista napisów
+    lista napisów w stylu "cuboid <nazwa> 0 0 0.5  0.7 0.7 1  itd." -> to będzie łatwo wczytywać jako string/stream i dodawać obiekty do sceny
+
+można przeciążyć operator przesunięcia prawostronnego ( >> ), żeby uzyskać efekt:
+    IStrm >> Type >> Name >> Shift
+
+zalążek można zintegrować z własnym programem (yay)

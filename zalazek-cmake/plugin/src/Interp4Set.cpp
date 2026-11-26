@@ -57,7 +57,7 @@ bool Interp4Set::ReadParams(std::istream& rStrm_CmdList){
   return true;
 }
 
-
+// tu trzeba będzie dodac mutex i guess
 bool Interp4Set::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
   std::shared_ptr<GeomObject> pObj = Scn.FindGeomObj(_ObjName);
 
@@ -71,10 +71,6 @@ bool Interp4Set::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
 
     pObj = Scn.FindGeomObj(_ObjName);
   }
-
-  // --- tutaj musi być coś w stylu wstawiania parametrów objektu
-  // pObj->UsePos_m()[0] = _DistX;
-  // pObj->
 
   pObj->UsePos_m() = g3d::Vector(_DistX, _DistY, _DistZ);
   pObj->UseRotAng_deg() = g3d::Vector(_AngleX, _AngleY, _AngleZ);

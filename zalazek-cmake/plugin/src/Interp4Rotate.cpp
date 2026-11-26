@@ -64,7 +64,7 @@ bool Interp4Rotate::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
   std::shared_ptr<GeomObject> pObj = Scn.FindGeomObj(_ObjName);
 
   if(!pObj){
-    std::cerr << "!!! Move: Nie znaleziono obiektu " << _ObjName << " w scenie" << endl;
+    Channel.print_error("!!! Move: Nie znaleziono obiektu " + _ObjName + " w scenie");
     return false;
   }
 
@@ -90,15 +90,16 @@ bool Interp4Rotate::ExecCmd(Set4GeomObjects& Scn, ComChannel& Channel){
       else{
         pObj->UseRotAng_deg()[2] = std::fmod((pObj->UseRotAng_deg()[2] + delta_angle), 360);
       }
+    
+
+      std::ostringstream info_stream;
+      info_stream << "# Rotatr: " << _ObjName << ", nowa pozycja: "
+      << curr_angle[0] << ", "
+      << curr_angle[1] << ", "
+      << curr_angle[2];
+
+      Channel.print(info_stream.str());
     }
-
-    std::ostringstream info_stream;
-    info_stream << "# Rotatr: " << _ObjName << ", nowa pozycja: "
-    << curr_angle[0] << ", "
-    << curr_angle[1] << ", "
-    << curr_angle[2];
-
-    Channel.print(info_stream.str());
 
     std::this_thread::sleep_for(time_step_us);
   }  

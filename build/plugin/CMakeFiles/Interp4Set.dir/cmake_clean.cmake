@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Interp4Set.dir/link.d"
   "CMakeFiles/Interp4Set.dir/src/Interp4Set.cpp.o"
   "CMakeFiles/Interp4Set.dir/src/Interp4Set.cpp.o.d"
   "libInterp4Set.pdb"
